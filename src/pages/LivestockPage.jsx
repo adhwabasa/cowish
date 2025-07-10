@@ -55,19 +55,19 @@ const LivestockPage = () => {
           </form>
         </div>
         <div className="grid xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-          {data.map(({ weight, name, id, loc, price, imgs }) => (
+          {data.map((data) => (
             <PricingCard
-              id={id}
-              weight={weight}
-              name={name}
-              loc={loc}
-              price={price}
-              img={imgs}
+              id={data.id}
+              weight={data.weight}
+              name={data.name}
+              loc={data.loc}
+              price={data.price}
+              img={data.imgs}
+              data={data}
             />
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

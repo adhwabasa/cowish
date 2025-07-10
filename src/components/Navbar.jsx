@@ -3,6 +3,8 @@ import Button from "./Button";
 import { useState } from "react";
 import { TbMenu3 } from "react-icons/tb";
 import { NavLink } from "react-router";
+import { FaCartShopping } from "react-icons/fa6";
+import useCartStore from "../configs/useStore";
 
 const List = ({ isMobile, custom }) => {
   const type = {
@@ -14,21 +16,19 @@ const List = ({ isMobile, custom }) => {
   return (
     <ul className={`${custom} gap-4 ${isMobile ? type.mobile : type.desktop}`}>
       <li className={linkHover}>
-        <NavLink to="/#home" >
-          Home
-        </NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li className={linkHover}>
-        <a href="/#shipping">Shipping</a>
+        <NavLink to="/">Shipping</NavLink>
       </li>
       <li className={linkHover}>
-        <a href="/#pricing">Pricing</a>
+        <NavLink to="/">Pricing</NavLink>
       </li>
       <li className={linkHover}>
-        <a href="/#about">About Us</a>
+        <NavLink to="/">About Us</NavLink>
       </li>
       <li className={linkHover}>
-        <a href="/#testimonials">Testimonials</a>
+        <NavLink to="/">Testimonials</NavLink>
       </li>
       <li className={linkHover}>
         <NavLink to="/livestock">Livestock</NavLink>
@@ -39,6 +39,7 @@ const List = ({ isMobile, custom }) => {
 };
 
 const Navbar = () => {
+  const { cart } = useCartStore();
   const [menu, setMenu] = useState(false);
   const handleClick = () => {
     setMenu(!menu);
@@ -54,17 +55,34 @@ const Navbar = () => {
             Cowish
           </NavLink>
           <List custom={"lg:flex hidden"} />
-          <Button
-            content="Contact Us"
-            outline={true}
-            custom={"hidden lg:block"}
-          />
-          <button
-            className="lg:hidden active:scale-75 transition-all duration-150"
-            onClick={handleClick}
-          >
-            <TbMenu3 className="text-3xl" />
-          </button>
+          <div className="flex lg:flex-row-reverse lg:gap-4">
+            <Button
+              content="Contact Us"
+              outline={true}
+              custom={"hidden lg:block"}
+            />
+            <div className="flex gap-4">
+              <NavLink
+                to="/cart"
+                className="w-fit relative bg-transparent py-3 text-lg border hover:text-white text-primary hover:bg-text hover:border-text hover:shadow-lg px-3 rounded-2xl transition-all duration-150 "
+              >
+                <FaCartShopping />
+                <span
+                  className={`absolute text-xs -top-2 text-text font-bold -right-2 bg-accent py-1 px-2 rounded-full ${
+                    cart.length === 0 && "hidden"
+                  }`}
+                >
+                  {cart.reduce((acc, curr) => acc + curr.qty, 0)}
+                </span>
+              </NavLink>
+              <button
+                className="lg:hidden active:scale-75 transition-all duration-150"
+                onClick={handleClick}
+              >
+                <TbMenu3 className="text-3xl" />
+              </button>
+            </div>
+          </div>
         </div>
         <div
           className={`${

@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import livestockData from "../assets/fetch";
 import { useParams } from "react-router";
-import img from "../assets/cows.jpg";
 import Label from "../components/Label";
 import formatRupiah from "../configs/convertRupiah";
 import Button from "../components/Button";
@@ -12,6 +10,9 @@ import "../index.css";
 import { useSwiper } from "swiper/react";
 import SwiperNavs from "../components/SwiperNavs";
 import Swal from "sweetalert2";
+import { FaCartArrowDown } from "react-icons/fa6";
+import useCartStore from "../configs/useStore";
+import Certificate from "../components/Certificate";
 
 const ProductPage = () => {
   const handleDeliver = () => {
@@ -39,17 +40,18 @@ const ProductPage = () => {
       }
     });
   };
+
+  const addToCart = useCartStore((state) => state.addToCart);
+  const cart = useCartStore((state) => state.cart);
+
   const swiper = useSwiper();
-  useEffect(() => {
-    console.log(data);
-  });
   const params = useParams();
   const data = livestockData.find((data) => data.id === parseInt(params.id));
   return (
     <div>
       <Navbar />
-      <div className="pt-[100px] container pb-32">
-        <div className="h-96 flex w-full ">
+      <div className="pt-[90px] container pb-32">
+        <div className="h-72 flex w-full ">
           <Swiper
             breakpoints={{
               0: {
@@ -69,7 +71,8 @@ const ProductPage = () => {
             spaceBetween={16}
             modules={[Pagination]}
             pagination={{ clickable: true }}
-            className="relative overflow-visible z-[-999]" >
+            className="relative overflow-visible z-[-999]"
+          >
             {data.imgs.map((img) => (
               <SwiperSlide className="w-fit">
                 <img
@@ -105,6 +108,12 @@ const ProductPage = () => {
             recommend seeing them in person. Online listings are helpful, but
             nothing beats a real-life visit.
           </p>
+          <h4 className="text-center font-heading mt-8">Certification</h4>
+          <div className="flex flex-col gap-4 mt-4">
+            {data.certification.map((item) => (
+              <Certificate text={item} />
+            ))}
+          </div>
         </div>
       </div>
       <div className="fixed bottom-0 lg:flex-row lg:gap-32 bg-bg container left-1/2 flex flex-col gap-2 -translate-x-1/2 py-2 border-t">
@@ -112,8 +121,22 @@ const ProductPage = () => {
           <span className="font-semibold">Price :</span>
           <span>{formatRupiah(data.price)}</span>
         </div>
-
-        <Button content="Deliver Now!" custom="w-full py-3 text-lg" event={handleDeliver} />
+        <div className="flex gap-2 w-full">
+          <Button
+            content={<FaCartArrowDown />}
+            custom="w-fit bg-transparent py-3 text-lg"
+            outline={true}
+            event={() => {
+              addToCart(data);
+              console.log(cart);
+            }}
+          />
+          <Button
+            content="Deliver Now!"
+            custom="w-full py-3 text-lg"
+            event={handleDeliver}
+          />
+        </div>
       </div>
     </div>
   );

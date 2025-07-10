@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
+    "axios": "^1.10.0",
+    "dotenv": "^16.5.0",
     "formik": "^2.4.6",
     "react": "^19.1.0",
     "react-awesome-reveal": "^4.3.1",
@@ -20,7 +22,8 @@
     "react-scroll": "^1.9.3",
     "sweetalert2": "^11.22.0",
     "swiper": "^11.2.8",
-    "yup": "^1.6.1"
+    "yup": "^1.6.1",
+    "zustand": "^5.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

@@ -20,14 +20,15 @@ const Pricing = () => {
 
       <div className="grid xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
         <Fade cascade={true} direction="up" damping={0.2} triggerOnce={true}>
-        {newLiveStock.map(({ weight, name, id, loc, price, imgs }) => (
+        {newLiveStock.map((data) => (
           <PricingCard
-            id={id}
-            weight={weight}
-            name={name}
-            loc={loc}
-            price={price}
-            img={imgs}
+            id={data.id}
+            weight={data.weight}
+            name={data.name}
+            loc={data.loc}
+            price={data.price}
+            img={data.imgs}
+            data={data}
           />
         ))}
         </Fade>

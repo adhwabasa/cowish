@@ -1,10 +1,10 @@
 import React from "react";
-import imgTest from "../assets/2.jpg";
-import { FaShippingFast } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { NavLink } from "react-router";
+import { FaCartArrowDown } from "react-icons/fa6";
 import formatRupiah from "../configs/convertRupiah";
 import Swal from "sweetalert2";
+import useCartStore from "../configs/useStore";
 
 const PricingCard = ({
   img = imgTest,
@@ -13,6 +13,7 @@ const PricingCard = ({
   name = "Cow",
   weight = 10,
   id,
+  data,
 }) => {
   const handleDeliver = () => {
     Swal.fire({
@@ -39,6 +40,8 @@ const PricingCard = ({
       }
     });
   };
+
+  const {addToCart} = useCartStore()
   return (
     <div className="h-[270px] relative" key={id}>
       <NavLink to={`/livestock/${id}`}>
@@ -62,8 +65,8 @@ const PricingCard = ({
             <FaLocationDot /> {loc}
           </span>
         </div>
-        <button className="text-primary bg-bg text-4xl p-2 rounded-2xl hover:mb-2 transition-all" onClick={handleDeliver}>
-          <FaShippingFast />
+        <button className="text-primary bg-bg text-3xl p-3 rounded-2xl hover:mb-2 transition-all" onClick={() => addToCart(data)}>
+          <FaCartArrowDown />
         </button>
       </div>
     </div>

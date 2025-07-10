@@ -6,18 +6,19 @@ const livestockData = [
     price: 12000000,
     weight: 250,
     loc: "Bekasi, West Java",
+    zipcode: 17111,
     gender: "Male",
     condition: "Healthy, Ready for Qurban",
-    certification: "Vaccinated, National Qurban Certified",
+    certification: ["Vaccinated", "National Qurban Certified"],
     shipping: "Java, Sumatra",
+    stock: 35,
     imgs: [
       "https://images.pexels.com/photos/36347/cow-pasture-animal-almabtrieb.jpg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/457447/pexels-photo-457447.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/248337/pexels-photo-248337.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/1449656/pexels-photo-1449656.jpeg?auto=compress&cs=tinysrgb&w=600",
     ],
-    description:
-      "High-quality local cow with a large, calm body. Ideal for Qurban.",
+    description: "High-quality local cow with a large, calm body. Ideal for Qurban.",
   },
   {
     id: 2,
@@ -26,17 +27,18 @@ const livestockData = [
     price: 2500000,
     weight: 45,
     loc: "Bandung, West Java",
+    zipcode: 40111,
     gender: "Male",
     condition: "Healthy, Vaccinated",
-    certification: "Double Vaccinated, PMK-Free",
+    certification: ["Double Vaccinated", "PMK-Free"],
     shipping: "West Java, Jakarta",
+    stock: 40,
     imgs: [
       "https://images.pexels.com/photos/144240/goat-lamb-little-grass-144240.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/1011630/pexels-photo-1011630.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/1011629/pexels-photo-1011629.jpeg?auto=compress&cs=tinysrgb&w=600",
     ],
-    description:
-      "Strong and agile local goat, great for beginners or family Qurban.",
+    description: "Strong and agile local goat, great for beginners or family Qurban.",
   },
   {
     id: 3,
@@ -45,17 +47,18 @@ const livestockData = [
     price: 2200000,
     weight: 40,
     loc: "Yogyakarta, DIY",
+    zipcode: 55111,
     gender: "Female",
     condition: "Healthy, Well-Groomed",
-    certification: "Certified by Local Livestock Authority",
+    certification: ["Certified by Local Livestock Authority"],
     shipping: "Central Java, Yogyakarta",
+    stock: 28,
     imgs: [
       "https://images.pexels.com/photos/288621/pexels-photo-288621.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/460956/pexels-photo-460956.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/1568070/pexels-photo-1568070.jpeg?auto=compress&cs=tinysrgb&w=600",
     ],
-    description:
-      "Fluffy and calm sheep, suitable for fattening or direct Qurban.",
+    description: "Fluffy and calm sheep, suitable for fattening or direct Qurban.",
   },
   {
     id: 5,
@@ -64,18 +67,19 @@ const livestockData = [
     price: 2700000,
     weight: 48,
     loc: "Tangerang, Banten",
+    zipcode: 15111,
     gender: "Male",
     condition: "Healthy, Horned",
-    certification: "PMK-Free, Banten Health Certified",
+    certification: ["PMK-Free", "Banten Health Certified"],
     shipping: "Greater Jakarta (Jabodetabek)",
+    stock: 32,
     imgs: [
       "https://images.pexels.com/photos/2036603/pexels-photo-2036603.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3384229/pexels-photo-3384229.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/2397441/pexels-photo-2397441.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/29687475/pexels-photo-29687475/free-photo-of-majestic-ram-standing-in-faroe-islands-landscape.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "https://images.pexels.com/photos/29687475/pexels-photo-29687475/free-photo-of-majestic-ram-standing-in-faroe-islands-landscape.jpeg?auto=compress&cs=tinysrgb&w=600",
     ],
-    description:
-      "Muscular ram with strong horns, ideal for Qurban or livestock shows.",
+    description: "Muscular ram with strong horns, ideal for Qurban or livestock shows.",
   },
   {
     id: 6,
@@ -84,18 +88,19 @@ const livestockData = [
     price: 5000000,
     weight: 120,
     loc: "Probolinggo, East Java",
+    zipcode: 67219,
     gender: "Female",
     condition: "Healthy, Trainable",
-    certification: "Complete Health Certificate",
+    certification: ["Complete Health Certificate"],
     shipping: "East Java",
+    stock: 24,
     imgs: [
       "https://images.pexels.com/photos/598751/pexels-photo-598751.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/208821/pexels-photo-208821.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/1580027/pexels-photo-1580027.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/3995445/pexels-photo-3995445.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "https://images.pexels.com/photos/3995445/pexels-photo-3995445.jpeg?auto=compress&cs=tinysrgb&w=600",
     ],
-    description:
-      "Gentle and strong donkey, great for light farming or educational purposes.",
+    description: "Gentle and strong donkey, great for light farming or educational purposes.",
   },
   {
     id: 8,
@@ -104,18 +109,19 @@ const livestockData = [
     price: 1800000,
     weight: 35,
     loc: "Semarang, Central Java",
+    zipcode: 50149,
     gender: "Female",
     condition: "Healthy, Young & Active",
-    certification: "Vaccinated, Vet Checked",
+    certification: ["Vaccinated", "Vet Checked"],
     shipping: "Central Java, Yogyakarta",
+    stock: 41,
     imgs: [
       "https://images.pexels.com/photos/59821/lamb-spring-nature-animal-59821.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/891607/pexels-photo-891607.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/2156310/pexels-photo-2156310.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2127919/pexels-photo-2127919.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "https://images.pexels.com/photos/2127919/pexels-photo-2127919.jpeg?auto=compress&cs=tinysrgb&w=600",
     ],
-    description:
-      "Young playful lamb, great for small-scale farming or future breeding.",
+    description: "Young playful lamb, great for small-scale farming or future breeding.",
   },
   {
     id: 9,
@@ -124,18 +130,19 @@ const livestockData = [
     price: 10000000,
     weight: 180,
     loc: "Sukabumi, West Java",
+    zipcode: 43111,
     gender: "Female",
     condition: "Healthy, Compact Build",
-    certification: "PMK-Free, Health Certificate",
+    certification: ["PMK-Free", "Health Certificate"],
     shipping: "West Java, Jakarta",
+    stock: 38,
     imgs: [
       "https://images.pexels.com/photos/32493226/pexels-photo-32493226/free-photo-of-holstein-calf-resting-on-straw-in-barn.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/13426499/pexels-photo-13426499.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
       "https://images.pexels.com/photos/2674485/pexels-photo-2674485.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
       "https://images.pexels.com/photos/28964673/pexels-photo-28964673/free-photo-of-young-holstein-calf-resting-on-green-pasture.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     ],
-    description:
-      "Compact and efficient, this mini cow is perfect for urban or limited spaces.",
+    description: "Compact and efficient, this mini cow is perfect for urban or limited spaces.",
   },
   {
     id: 10,
@@ -144,18 +151,20 @@ const livestockData = [
     price: 3000000,
     weight: 55,
     loc: "Magelang, Central Java",
+    zipcode: 56172,
     gender: "Female",
     condition: "Healthy, Premium Breed",
-    certification: "Organic Farm Certified",
+    certification: ["Organic Farm Certified"],
     shipping: "Central Java, Yogyakarta, East Java",
+    stock: 45,
     imgs: [
       "https://images.pexels.com/photos/1011628/pexels-photo-1011628.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3721307/pexels-photo-3721307.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3682114/pexels-photo-3682114.jpeg?auto=compress&cs=tinysrgb&w=600",
     ],
-    description:
-      "Premium female goat, perfect for Qurban or breeding purposes.",
+    description: "Premium female goat, perfect for Qurban or breeding purposes.",
   },
 ];
+
 
 export default livestockData;
